@@ -20,7 +20,7 @@ export default defineConfig({
       // Specify the icon folder to be cached
       iconDirs: [resolve(process.cwd(), 'src/icons')],
       // Specify symbolId format
-      symbolId: 'icon-[dir]-[name]'
+      symbolId: 'icon-[dir]-[name]',
     })
   ],
   resolve: {

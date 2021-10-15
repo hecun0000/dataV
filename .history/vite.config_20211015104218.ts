@@ -9,18 +9,10 @@ import legacy from '@vitejs/plugin-legacy'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    ElementPlus({}),
+  plugins: [vue(), ElementPlus({}),
     legacy({
       targets: ['ie >= 11'],
       additionalLegacyPolyfills: ['regenerator-runtime/runtime']
-    }),
-    viteSvgIcons({
-      // Specify the icon folder to be cached
-      iconDirs: [resolve(process.cwd(), 'src/icons')],
-      // Specify symbolId format
-      symbolId: 'icon-[dir]-[name]'
     })
   ],
   resolve: {

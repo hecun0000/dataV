@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import ElementPlus from 'unplugin-element-plus/vite'
-import viteSvgIcons from 'vite-plugin-svg-icons'
+import viteSvgIcons from 'vite-plugin-svg-icons';
 
 // 如果编辑器提示 path 模块找不到，则可以安装一下 @types/node -> npm i @types/node -D
 import { resolve } from 'path'
@@ -9,18 +9,10 @@ import legacy from '@vitejs/plugin-legacy'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    ElementPlus({}),
+  plugins: [vue(), ElementPlus({}),
     legacy({
       targets: ['ie >= 11'],
       additionalLegacyPolyfills: ['regenerator-runtime/runtime']
-    }),
-    viteSvgIcons({
-      // Specify the icon folder to be cached
-      iconDirs: [resolve(process.cwd(), 'src/icons')],
-      // Specify symbolId format
-      symbolId: 'icon-[dir]-[name]'
     })
   ],
   resolve: {

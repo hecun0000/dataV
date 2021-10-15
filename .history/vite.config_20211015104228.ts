@@ -18,9 +18,9 @@ export default defineConfig({
     }),
     viteSvgIcons({
       // Specify the icon folder to be cached
-      iconDirs: [resolve(process.cwd(), 'src/icons')],
+      iconDirs: [path.resolve(process.cwd(), 'src/icons')],
       // Specify symbolId format
-      symbolId: 'icon-[dir]-[name]'
+      symbolId: 'icon-[dir]-[name]',
     })
   ],
   resolve: {
